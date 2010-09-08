@@ -1,0 +1,19 @@
+Since I’ve been doing a good deal of work with WXS lately, I decided to create an application that I could use to test various operations and scenarios that application developers might want to do with WXS. I’ve created a 0.1 version of the tool that does the following : 
+
+
+
+Simple CRUD operations in both single and multi-threaded mode
+Executes CRUD operations using a single user-defined key/value pair
+Executes CRUD operations en masse using a text file that is parsed and converted into Objects to be used in the operation(s)
+Executes the CRUD operations against multiple Maps
+Executes a side cache scenario and simulates random database access time (within a user-defined range) for cache misses
+Provides an API for customer implementations of the class used to convert the text data file into Objects (default is string key with an ArrayList<String> as payload)
+
+
+Some final notes: 
+
+You need to have objectgrid.jar available on your classpath for the benchmarker to function correctly
+If you don’t provide a benchmarker.properties file in the same directory as the JAR, it will default to an internal property file reference.
+
+
+I’ll be enhancing this tool as time goes on. I have several items on my plate including adding a near cache option for the side cache operation. The source is out on github here (there is also an API JAR required for custom Objectifiable implementations you might want to write yourself – find it here). Feel free to give it a try and drop me a comment here or via twitter (@jpapejr). 
